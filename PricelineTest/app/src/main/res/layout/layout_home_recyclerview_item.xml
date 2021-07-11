@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.pricelinetest.features.home.recyclerview.NameItemViewModel" />
+    </data>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:text="@{String.format(@string/name_text_format, viewModel.nameItem.displayName, viewModel.nameItem.newestPublishedDate)}"
+        android:textColor="@color/black"
+        android:textSize="@dimen/largeText"
+        android:textStyle="bold"
+        tools:text="title" />
+</layout>

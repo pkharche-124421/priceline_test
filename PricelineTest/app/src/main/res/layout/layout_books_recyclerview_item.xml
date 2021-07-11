@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.pricelinetest.features.books.recyclerview.BooksItemViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        bind:cardCornerRadius="@dimen/card_corner_radius"
+        bind:cardElevation="@dimen/card_elevation">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/tv_price"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:padding="5dp"
+                android:text="@{viewModel.bookDetailsItem.title}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/largeText"
+                android:textStyle="bold"
+                tools:text="title" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:text="@{viewModel.bookDetailsItem.description}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/smallText"
+                tools:text="description" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_description"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:text="@{String.format(@string/book_author_name, viewModel.bookDetailsItem.author)}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/smallText"
+                tools:text="author" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:text="@{String.format(@string/book_price, viewModel.bookDetailsItem.price)}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/mediumText"
+                android:textStyle="italic"
+                tools:text="price" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

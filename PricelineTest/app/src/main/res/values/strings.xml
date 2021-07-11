@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Priceline Test</string>
+    <string name="api_key">G67Iqf3NsY05sGqO4Av8ij4IhOoNhvGo</string>
+    <string name="network_error">Oops! Seems you are not online...</string>
+    <string name="error_msg">Oops! something seems broken...</string>
+    <string name="no_books_found">No books found!</string>
+    <string name="name_text_format">%1$s (%2$s)</string>
+    <string name="book_price">Rs %1$.2f</string>
+    <string name="book_author_name">Written By: %1$s</string>
+</resources>
